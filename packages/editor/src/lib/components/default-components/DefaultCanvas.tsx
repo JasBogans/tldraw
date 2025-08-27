@@ -9,10 +9,10 @@ import { useCanvasEvents } from '../../hooks/useCanvasEvents'
 import { useCoarsePointer } from '../../hooks/useCoarsePointer'
 import { useContainer } from '../../hooks/useContainer'
 import { useDocumentEvents } from '../../hooks/useDocumentEvents'
+import { useDomCanvasEvents } from '../../hooks/useDomCanvasEvents'
 import { useEditor } from '../../hooks/useEditor'
 import { useEditorComponents } from '../../hooks/useEditorComponents'
 import { useFixSafariDoubleTapZoomPencilEvents } from '../../hooks/useFixSafariDoubleTapZoomPencilEvents'
-import { useGestureEvents } from '../../hooks/useGestureEvents'
 import { useHandleEvents } from '../../hooks/useHandleEvents'
 import { useSharedSafeId } from '../../hooks/useSafeId'
 import { useScreenBounds } from '../../hooks/useScreenBounds'
@@ -47,7 +47,7 @@ export function DefaultCanvas({ className }: TLCanvasComponentProps) {
 	useDocumentEvents()
 	useCoarsePointer()
 
-	useGestureEvents(rCanvas)
+	useDomCanvasEvents({ editor, container: rCanvas.current })
 	useFixSafariDoubleTapZoomPencilEvents(rCanvas)
 
 	const rMemoizedStuff = useRef({ lodDisableTextOutline: false, allowTextOutline: true })

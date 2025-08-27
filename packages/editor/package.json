@@ -57,7 +57,6 @@
 		"@tldraw/utils": "workspace:*",
 		"@tldraw/validate": "workspace:*",
 		"@types/core-js": "^2.5.8",
-		"@use-gesture/react": "^10.3.1",
 		"classnames": "^2.5.1",
 		"core-js": "^3.40.0",
 		"eventemitter3": "^4.0.7",
